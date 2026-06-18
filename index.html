@@ -2,8 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Saanjha — shared household</title>
+    <meta name="description" content="Shared grocery & life-management for housemates — one pantry, one shopping list, one ledger." />
+
+    <!-- Home-screen / PWA install -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#2E5D3B" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+
+    <!-- iOS: Add to Home Screen -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Saanjha" />
     <!-- Tailwind core utilities (layout only: flex/grid/spacing). In the Claude
          artifact runtime these are provided ambiently; here we load the Play CDN
          so the same className utilities work in this standalone Vite app. -->
