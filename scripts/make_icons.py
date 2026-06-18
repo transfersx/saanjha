@@ -89,10 +89,17 @@ jobs = [
     ("icon-512.png", 512, 0.22, 1.0),
     ("icon-maskable-512.png", 512, 0.0, 0.78),
     ("apple-touch-icon.png", 180, 0.0, 0.92),
-    ("favicon-32.png", 32, 0.0, 1.0),
-    ("favicon-16.png", 16, 0.0, 1.0),
+    # favicons: zoom the lamp a touch so it reads at tab size
+    ("favicon-32.png", 32, 0.0, 1.08),
+    ("favicon-16.png", 16, 0.0, 1.12),
 ]
 for name, size, corner, art in jobs:
     make(size, corner, art).save(os.path.join(OUT, name))
     print("wrote", name, size)
+
+# Multi-resolution favicon.ico (browsers request /favicon.ico by default)
+ico_master = make(64, 0.0, 1.08)
+ico_master.save(os.path.join(OUT, "favicon.ico"),
+                sizes=[(16, 16), (32, 32), (48, 48)])
+print("wrote favicon.ico 16/32/48")
 print("done ->", os.path.normpath(OUT))
